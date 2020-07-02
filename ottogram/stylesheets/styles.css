@@ -9,8 +9,14 @@
   font-style: normal;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: rgb(149, 194, 215);
+  display: flex;
+  flex-direction: column;
   font-size: 10px;
 }
 
@@ -20,9 +26,9 @@ a {
 
 .logo-text {
   background: white;
+  font-family: lakeshore;
   font-size: 37px;
   text-align: center;
-  font-family: lakeshore;
   text-transform: uppercase;
 }
 
@@ -36,8 +42,10 @@ a {
 }
 
 .thumbnail-list {
-  list-style:none;
-  padding:0
+  list-style: none;
+  padding:0;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .thumbnail-image {
@@ -48,9 +56,14 @@ a {
 .thumbnail-item {
   border: 1px solid rgb(100%, 100%, 100%);
   border: 1px solid rgba(100%, 100%, 100%, .08);
-  display:block;
+  display: inline-block;
+  width: 120px;
 }
 
 .thumbnail-item + .thumbnail-item {
   margin-top: 10px
+}
+
+.detail-image {
+  width: 90%;
 }
