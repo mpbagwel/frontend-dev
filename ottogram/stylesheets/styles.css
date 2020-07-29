@@ -83,11 +83,17 @@ a {
 .detail-image-frame {
   position: relative;
   text-align: center;
+  transition: transform 333ms cubic-bezier(1,.06,.28,1);
 }
 
 .thumbnail-image {
   display: block;
   width: 100%;
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
 }
 
 .thumbnail-item {
@@ -96,11 +102,12 @@ a {
   display: inline-block;
   min-width: 120px;
   /* max-width: 120px; */
-  transition: transform 133ms;
+  transition: transform 133ms ease-in-out;
 }
 
 .thumbnail-item:hover {
   transform: scale(1.2);
+  /* transition: transform 1000ms ease-in; */
 }
 
 .detail-image {
