@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>coffeerun</title>
-  </head>
-  <body>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Coffeerun</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+</head>
+
+<body class="container">
+    <header>
+        <h1>CoffeeRun</h1>
+    </header>
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                      <label for="coffeeOrder">Coffee Order</label>
+                      <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+                    </div>
+                    <div class="form-group">
+                      <label for="emailInput">Email</label>
+                      <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com">
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="size" value="short">
+                        Short
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="size" value="tall" checked>
+                        Tall
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="size" value="grande">
+                        Grande
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label for="flavorShot">Flavor Shot</label>
+                      <select id="flavorShot" class="form-control" name="flavor">
+                        <option value="">None</option>
+                        <option value="caramel">Caramel</option>
+                        <option value="almond">Almond</option>
+                        <option value="mocha">Mocha</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="strengthLevel">Caffeine Rating</label>
+                      <input type="range" name="strength" value="30" id="strengthLevel">
+                    </div>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/trucks.js" charset="utf-8"></script>
-    <<script src="scripts/main.js" charset="utf-8"></script>
-  </body>
+    <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+
 </html>
