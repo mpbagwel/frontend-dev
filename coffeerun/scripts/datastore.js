@@ -15,7 +15,7 @@
   };
 
   DataStore.prototype.getAll = function () {
-    return this.data[];
+    return this.data;
   };
 
   DataStore.prototype.remove = function (key) {
