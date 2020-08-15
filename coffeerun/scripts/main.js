@@ -10,5 +10,6 @@
   window.myTruck = myTruck;
 
   formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
+  formHandler.addSliderHandler();
   console.log(formHandler);
 }) (window);
