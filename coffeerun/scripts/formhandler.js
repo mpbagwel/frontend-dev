@@ -18,6 +18,7 @@
 }
 
 FormHandler.prototype.addSubmitHandler = function (fn) {
+  var form = this;
   console.log('Setting submit handler for form');
   this.$formElement.on('submit', function (event){
     event.preventDefault();
@@ -27,43 +28,43 @@ FormHandler.prototype.addSubmitHandler = function (fn) {
       data[item.name] = item.value;
       console.log(item.name + ' is ' + item.value);
     })
-    console.log(data);
+    // console.log(data);
     fn(data);
     this.reset();
     this.elements[0].focus();
-    form.changeColor(parseInt($(form.$sliderElement).val()));
+    // form.changeColor(parseInt($(form.$sliderElement).val()));
   });
 };
 
 //Grabbed from GitHub (MapleSun)
 
-FormHandler.prototype.changeColor = function (strength) {
-    var textColor;
-    if (strength < 34) {
-        var green = 200+strength;
-        textColor = 'rgb(0,' +green+ ',0)';
-    } else if (strength > 33 && strength < 67) {
-        var yellow = 255-strength;
-        textColor = 'rgb('+yellow+','+yellow+',0)';
-    } else {
-        var red = 155+strength;
-        textColor = 'rgb('+red+',0,0)';
-    }
-    console.log(textColor);
-    this.$numElement.css('color',textColor);
-    this.$numElement.text(strength);
-};
+// FormHandler.prototype.changeColor = function (strength) {
+//     var textColor;
+//     if (strength < 34) {
+//         var green = 200+strength;
+//         textColor = 'rgb(0,' +green+ ',0)';
+//     } else if (strength > 33 && strength < 67) {
+//         var yellow = 255-strength;
+//         textColor = 'rgb('+yellow+','+yellow+',0)';
+//     } else {
+//         var red = 155+strength;
+//         textColor = 'rgb('+red+',0,0)';
+//     }
+//     console.log(textColor);
+//     this.$numElement.css('color',textColor);
+//     this.$numElement.text(strength);
+// };
 
-FormHandler.prototype.addSliderHandler = function (){
-    //var form = this;
-    var slider = this.$sliderElement;
-    this.changeColor(parseInt(slider.val()));
-    slider.on('change', function (event){
-        event.preventDefault();
-        this.changeColor(parseInt(slider.val()));
-    }.bind(this));
-
-};
+// FormHandler.prototype.addSliderHandler = function (){
+//     //var form = this;
+//     var slider = this.$sliderElement;
+//     this.changeColor(parseInt(slider.val()));
+//     slider.on('change', function (event){
+//         event.preventDefault();
+//         this.changeColor(parseInt(slider.val()));
+//     }.bind(this));
+//
+// };
 
   App.FormHandler = FormHandler;
   window.App = App;

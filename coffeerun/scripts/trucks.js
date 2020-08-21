@@ -13,7 +13,7 @@ Truck.prototype.createOrder = function (order) {
 };
 
 Truck.prototype.deliverOrder = function (customerId) {
-  console.log('Adding order for ' + customerId);
+  console.log('Delivered order for ' + customerId);
   this.db.remove(customerId);
 };
 
