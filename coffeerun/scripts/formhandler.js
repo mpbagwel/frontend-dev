@@ -35,6 +35,8 @@ FormHandler.prototype.addSubmitHandler = function (fn) {
   });
 };
 
+//Grabbed from GitHub (MapleSun)
+
 FormHandler.prototype.changeColor = function (strength) {
     var textColor;
     if (strength < 34) {
