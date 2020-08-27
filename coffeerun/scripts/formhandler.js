@@ -29,10 +29,11 @@ FormHandler.prototype.addSubmitHandler = function (fn) {
       console.log(item.name + ' is ' + item.value);
     })
     // console.log(data);
-    fn(data);
-    this.reset();
-    this.elements[0].focus();
-    // form.changeColor(parseInt($(form.$sliderElement).val()));
+    fn(data)
+    .then(function () {
+      this.reset();
+      this.elements[0].focus();
+    }.bind(this));
   });
 };
 
@@ -47,7 +48,7 @@ FormHandler.prototype.addInputHandler = function (fn) {
       message = emailAddress + ' is not an authorized email address!'
       event.target.setCustomValidity(message);
     }
-  }); 
+  });
 }
 
 //Grabbed from GitHub (MapleSun)
