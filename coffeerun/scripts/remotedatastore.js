@@ -26,7 +26,13 @@ RemoteDataStore.prototype.getAll = function (cb) {
 };
 
 RemoteDataStore.prototype.get = function (key, cb) {
-  $.get(this.serverURL + '/' + key, function (serverResponse) {
+  $.get(this.serverURL + '/' + key, {
+    type: 'DELETE'
+  });
+};
+
+RemoteDataStore.prototype.remove = function (key) {
+  $.ajax(this.serverURL + '/' + key, function (serverResponse) {
     console.log(serverResponse);
     cb(serverResponse);
   });
